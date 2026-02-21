@@ -1,0 +1,6 @@
+{
+  "alert_name": "Phishing URL Detected",
+  "user": "employee@company.com",
+  "url": "secure-login-alert.com",
+  "timestamp": "2026-02-14T12:00:00"
+}

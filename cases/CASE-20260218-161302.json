@@ -1,0 +1,194 @@
+{
+    "alert_name": "Possible Phishing Credential Harvesting Activity",
+    "user": "unknown",
+    "url": "unknown",
+    "timestamp": "",
+    "attack_timeline": [
+        {
+            "time": 1771409521,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771409595,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "page_visit",
+            "uri": "/login",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771409685,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "credential_submission",
+            "uri": "/login.php",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771409710,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "mfa_bypass_attempt",
+            "uri": "/mfa",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771409765,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "session_activity",
+            "uri": "/account",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771409839,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "password_change_attempt",
+            "uri": "/settings",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        },
+        {
+            "time": 1771409920,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "data_access",
+            "uri": "/api/export",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        },
+        {
+            "time": 1771410241,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771410315,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "page_visit",
+            "uri": "/login",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771410405,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "credential_submission",
+            "uri": "/login.php",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771410430,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "mfa_bypass_attempt",
+            "uri": "/mfa",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771410485,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "session_activity",
+            "uri": "/account",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771410559,
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "password_change_attempt",
+            "uri": "/settings",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        }
+    ],
+    "timeline": [
+        {
+            "stage": "alert_received",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "normalized",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "ioc_extracted",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "risk_scored",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "mitre_mapped",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "severity_boosted",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "decision_made",
+            "time": "2026-02-18T10:43:02.067424"
+        },
+        {
+            "stage": "report_generated",
+            "time": "2026-02-18T10:43:02.068561"
+        }
+    ],
+    "alert_type": "phishing",
+    "iocs": {
+        "domain": "unknown"
+    },
+    "risk_score": 210,
+    "severity": "HIGH",
+    "analysis_reasons": [
+        "Observed activity: email_link_clicked",
+        "Observed activity: page_visit",
+        "Observed activity: credential_submission",
+        "Observed activity: mfa_bypass_attempt",
+        "Observed activity: session_activity",
+        "Observed activity: password_change_attempt",
+        "Observed activity: data_access",
+        "Observed activity: email_link_clicked",
+        "Observed activity: page_visit",
+        "Observed activity: credential_submission",
+        "Observed activity: mfa_bypass_attempt",
+        "Observed activity: session_activity",
+        "Observed activity: password_change_attempt",
+        "Phishing alert category",
+        "Multi-stage attack behavior detected"
+    ],
+    "mitre_attack": [
+        {
+            "technique_id": "T1566",
+            "name": "Phishing"
+        }
+    ],
+    "decision": "Escalate and recommend containment",
+    "mitre_ids": [
+        "T1566"
+    ],
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: unknown\nURL: unknown\nDomain: unknown\n\nRisk Score: 210\nSeverity: HIGH\n\nReasons:\nObserved activity: email_link_clicked\nObserved activity: page_visit\nObserved activity: credential_submission\nObserved activity: mfa_bypass_attempt\nObserved activity: session_activity\nObserved activity: password_change_attempt\nObserved activity: data_access\nObserved activity: email_link_clicked\nObserved activity: page_visit\nObserved activity: credential_submission\nObserved activity: mfa_bypass_attempt\nObserved activity: session_activity\nObserved activity: password_change_attempt\nPhishing alert category\nMulti-stage attack behavior detected\n\nDecision:\nEscalate and recommend containment\n\nMITRE ATT&CK Techniques:\nT1566 - Phishing\n",
+    "case_id": "CASE-20260218-161302"
+}

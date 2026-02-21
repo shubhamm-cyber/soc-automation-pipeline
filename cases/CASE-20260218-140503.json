@@ -1,0 +1,119 @@
+{
+    "alert_name": "Possible Phishing Credential Harvesting Activity",
+    "user": "unknown",
+    "url": "unknown",
+    "timestamp": "",
+    "attack_timeline": [
+        {
+            "time": "1771401601",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link"
+        },
+        {
+            "time": "1771401675",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "page_visit",
+            "uri": "/login"
+        },
+        {
+            "time": "1771401765",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "credential_submission",
+            "uri": "/login.php"
+        },
+        {
+            "time": "1771401790",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "mfa_bypass_attempt",
+            "uri": "/mfa"
+        },
+        {
+            "time": "1771401845",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "session_activity",
+            "uri": "/account"
+        },
+        {
+            "time": "1771401919",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "password_change_attempt",
+            "uri": "/settings"
+        },
+        {
+            "time": "1771402000",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "data_access",
+            "uri": "/api/export"
+        }
+    ],
+    "timeline": [
+        {
+            "stage": "alert_received",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "normalized",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "ioc_extracted",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "risk_scored",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "mitre_mapped",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "severity_boosted",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "decision_made",
+            "time": "2026-02-18T08:35:02.735574"
+        },
+        {
+            "stage": "report_generated",
+            "time": "2026-02-18T08:35:02.736571"
+        }
+    ],
+    "alert_type": "phishing",
+    "iocs": {
+        "domain": "unknown"
+    },
+    "risk_score": 115,
+    "analysis_reasons": [
+        "Phishing alert category",
+        "Suspicious activity detected: email_link_clicked",
+        "Suspicious activity detected: page_visit",
+        "Suspicious activity detected: credential_submission",
+        "Suspicious activity detected: mfa_bypass_attempt",
+        "Suspicious activity detected: session_activity",
+        "Suspicious activity detected: password_change_attempt",
+        "Suspicious activity detected: data_access"
+    ],
+    "severity": "HIGH",
+    "mitre_attack": [
+        {
+            "technique_id": "T1566",
+            "name": "Phishing"
+        }
+    ],
+    "decision": "Escalate and recommend containment",
+    "mitre_ids": [
+        "T1566"
+    ],
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: unknown\nURL: unknown\nDomain: unknown\n\nRisk Score: 115\nSeverity: HIGH\n\nReasons:\nPhishing alert category\nSuspicious activity detected: email_link_clicked\nSuspicious activity detected: page_visit\nSuspicious activity detected: credential_submission\nSuspicious activity detected: mfa_bypass_attempt\nSuspicious activity detected: session_activity\nSuspicious activity detected: password_change_attempt\nSuspicious activity detected: data_access\n\nDecision:\nEscalate and recommend containment\n\nMITRE ATT&CK Techniques:\nT1566 - Phishing\n",
+    "case_id": "CASE-20260218-140503"
+}

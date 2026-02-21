@@ -1,0 +1,17 @@
+{
+    "alert_type": "phishing",
+    "user": "employee@company.com",
+    "url": "account-security-check.com",
+    "timestamp": "",
+    "iocs": {
+        "domain": "account-security-check.com"
+    },
+    "risk_score": 20,
+    "severity": "LOW",
+    "analysis_reasons": [
+        "Phishing alert category"
+    ],
+    "decision": "Log for monitoring",
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: employee@company.com\nURL: account-security-check.com\nDomain: account-security-check.com\n\nRisk Score: 20\nSeverity: LOW\n\nReasons:\nPhishing alert category\n\nDecision:\nLog for monitoring\n",
+    "case_id": "CASE-20260216-143001"
+}

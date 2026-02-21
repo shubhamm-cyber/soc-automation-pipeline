@@ -1,0 +1,133 @@
+{
+    "alert_name": "Possible Phishing Credential Harvesting Activity",
+    "user": "unknown",
+    "url": "unknown",
+    "timestamp": "",
+    "attack_timeline": [
+        {
+            "time": "0",
+            "user": "@",
+            "domain": "s",
+            "action": "a",
+            "uri": ""
+        },
+        {
+            "time": "1",
+            "user": "e",
+            "domain": "a",
+            "action": "s",
+            "uri": "/"
+        },
+        {
+            "time": "1",
+            "user": "l",
+            "domain": "o",
+            "action": "s",
+            "uri": "c"
+        },
+        {
+            "time": "2",
+            "user": "c",
+            "domain": "e",
+            "action": "c",
+            "uri": ""
+        },
+        {
+            "time": "3",
+            "user": "o",
+            "domain": "u",
+            "action": "i",
+            "uri": "o"
+        },
+        {
+            "time": "3",
+            "user": "y",
+            "domain": "n",
+            "action": "o",
+            "uri": "u"
+        },
+        {
+            "time": "5",
+            "user": "e",
+            "domain": "t",
+            "action": "n",
+            "uri": "n"
+        },
+        {
+            "time": "6",
+            "user": "e",
+            "domain": "-",
+            "action": "_",
+            "uri": "t"
+        },
+        {
+            "time": "7",
+            "user": "m",
+            "domain": "c",
+            "action": "e",
+            "uri": "a"
+        },
+        {
+            "time": "7",
+            "user": "p",
+            "domain": "c",
+            "action": "s",
+            "uri": "c"
+        }
+    ],
+    "timeline": [
+        {
+            "stage": "alert_received",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "normalized",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "ioc_extracted",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "risk_scored",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "mitre_mapped",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "severity_boosted",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "decision_made",
+            "time": "2026-02-17T14:08:01.781212"
+        },
+        {
+            "stage": "report_generated",
+            "time": "2026-02-17T14:08:01.781212"
+        }
+    ],
+    "alert_type": "phishing",
+    "iocs": {
+        "domain": "unknown"
+    },
+    "risk_score": 20,
+    "severity": "LOW",
+    "analysis_reasons": [
+        "Phishing alert category"
+    ],
+    "mitre_attack": [
+        {
+            "technique_id": "T1566",
+            "name": "Phishing"
+        }
+    ],
+    "decision": "Log for monitoring",
+    "mitre_ids": [
+        "T1566"
+    ],
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: unknown\nURL: unknown\nDomain: unknown\n\nRisk Score: 20\nSeverity: LOW\n\nReasons:\nPhishing alert category\n\nDecision:\nLog for monitoring\n\nMITRE ATT&CK Techniques:\nT1566 - Phishing\n",
+    "case_id": "CASE-20260217-193802"
+}

@@ -1,0 +1,25 @@
+2026-02-19 18:20:01 user=neha.sharma@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/email-link action=email_link_clicked
+
+2026-02-19 18:22:10 user=rohit.verma@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/email-link action=email_link_clicked
+
+2026-02-19 18:23:25 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/email-link action=email_link_clicked
+
+2026-02-19 18:24:02 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/login action=page_visit
+
+2026-02-19 18:26:20 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/login action=page_visit
+
+2026-02-19 18:27:05 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=POST uri=/login.php action=credential_submission
+
+2026-02-19 18:28:18 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=POST uri=/login.php action=credential_submission
+
+2026-02-19 18:29:40 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=POST uri=/mfa action=mfa_bypass_attempt
+
+2026-02-19 18:30:05 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/account action=session_activity
+
+2026-02-19 18:32:40 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=POST uri=/settings action=password_change_attempt
+
+2026-02-19 18:33:10 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/finance action=data_access
+
+2026-02-19 18:34:25 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/finance/export action=data_access
+
+2026-02-19 18:35:02 user=arjun.mehta@corp.local src_ip=185.234.219.12 dest_domain=account-security-check.com http_method=GET uri=/api/export action=data_access

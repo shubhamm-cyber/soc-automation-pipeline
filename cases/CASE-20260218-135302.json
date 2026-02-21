@@ -1,0 +1,112 @@
+{
+    "alert_name": "Possible Phishing Credential Harvesting Activity",
+    "user": "unknown",
+    "url": "unknown",
+    "timestamp": "",
+    "attack_timeline": [
+        {
+            "time": "1771401601",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link"
+        },
+        {
+            "time": "1771401675",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "page_visit",
+            "uri": "/login"
+        },
+        {
+            "time": "1771401765",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "credential_submission",
+            "uri": "/login.php"
+        },
+        {
+            "time": "1771401790",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "mfa_bypass_attempt",
+            "uri": "/mfa"
+        },
+        {
+            "time": "1771401845",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "session_activity",
+            "uri": "/account"
+        },
+        {
+            "time": "1771401919",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "password_change_attempt",
+            "uri": "/settings"
+        },
+        {
+            "time": "1771402000",
+            "user": "employee@company.com",
+            "domain": "account-security-check.com",
+            "action": "data_access",
+            "uri": "/api/export"
+        }
+    ],
+    "timeline": [
+        {
+            "stage": "alert_received",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "normalized",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "ioc_extracted",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "risk_scored",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "mitre_mapped",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "severity_boosted",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "decision_made",
+            "time": "2026-02-18T08:23:01.614729"
+        },
+        {
+            "stage": "report_generated",
+            "time": "2026-02-18T08:23:01.615816"
+        }
+    ],
+    "alert_type": "phishing",
+    "iocs": {
+        "domain": "unknown"
+    },
+    "risk_score": 20,
+    "severity": "LOW",
+    "analysis_reasons": [
+        "Phishing alert category"
+    ],
+    "mitre_attack": [
+        {
+            "technique_id": "T1566",
+            "name": "Phishing"
+        }
+    ],
+    "decision": "Log for monitoring",
+    "mitre_ids": [
+        "T1566"
+    ],
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: unknown\nURL: unknown\nDomain: unknown\n\nRisk Score: 20\nSeverity: LOW\n\nReasons:\nPhishing alert category\n\nDecision:\nLog for monitoring\n\nMITRE ATT&CK Techniques:\nT1566 - Phishing\n",
+    "case_id": "CASE-20260218-135302"
+}

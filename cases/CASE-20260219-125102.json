@@ -1,0 +1,225 @@
+{
+    "alert_name": "Possible Phishing Credential Harvesting Activity",
+    "user": "unknown",
+    "url": "unknown",
+    "timestamp": "",
+    "attack_timeline": [
+        {
+            "time": 1771482781,
+            "user": "neha.sharma@corp.local",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771482850,
+            "user": "rohit.verma@corp.local",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771482925,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "email_link_clicked",
+            "uri": "/email-link",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771482962,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "page_visit",
+            "uri": "/login",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771483040,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "page_visit",
+            "uri": "/login",
+            "ip": "185.234.219.12",
+            "stage_severity": "LOW"
+        },
+        {
+            "time": 1771483085,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "credential_submission",
+            "uri": "/login.php",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771483158,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "credential_submission",
+            "uri": "/login.php",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771483240,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "mfa_bypass_attempt",
+            "uri": "/mfa",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771483265,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "session_activity",
+            "uri": "/account",
+            "ip": "185.234.219.12",
+            "stage_severity": "MEDIUM"
+        },
+        {
+            "time": 1771483360,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "password_change_attempt",
+            "uri": "/settings",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        },
+        {
+            "time": 1771483390,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "data_access",
+            "uri": "/finance",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        },
+        {
+            "time": 1771483465,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "data_access",
+            "uri": "/finance/export",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        },
+        {
+            "time": 1771483502,
+            "user": "arjun.mehta@corp.local",
+            "domain": "account-security-check.com",
+            "action": "data_access",
+            "uri": "/api/export",
+            "ip": "185.234.219.12",
+            "stage_severity": "HIGH"
+        }
+    ],
+    "timeline": [
+        {
+            "stage": "alert_received",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "normalized",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "ioc_extracted",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "risk_scored",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "mitre_mapped",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "severity_boosted",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "decision_made",
+            "time": "2026-02-19T07:21:01.249596"
+        },
+        {
+            "stage": "report_generated",
+            "time": "2026-02-19T07:21:01.250595"
+        }
+    ],
+    "alert_type": "phishing",
+    "iocs": {
+        "domain": "unknown"
+    },
+    "risk_score": 220,
+    "severity": "CRITICAL",
+    "analysis_reasons": [
+        "Observed activity: email_link_clicked",
+        "Observed activity: email_link_clicked",
+        "Observed activity: email_link_clicked",
+        "Observed activity: page_visit",
+        "Observed activity: page_visit",
+        "Observed activity: credential_submission",
+        "Observed activity: credential_submission",
+        "Observed activity: mfa_bypass_attempt",
+        "Observed activity: session_activity",
+        "Observed activity: password_change_attempt",
+        "Observed activity: data_access",
+        "Observed activity: data_access",
+        "Observed activity: data_access",
+        "Phishing alert category",
+        "Multi-stage attack behavior detected",
+        "Severity boosted due to multiple MITRE ATT&CK techniques"
+    ],
+    "mitre_attack": [
+        {
+            "technique_id": "T1566",
+            "name": "Phishing"
+        },
+        {
+            "technique_id": "T1595",
+            "name": "Active Scanning"
+        },
+        {
+            "technique_id": "T1056",
+            "name": "Input Capture"
+        },
+        {
+            "technique_id": "T1621",
+            "name": "Multi-Factor Authentication Request Generation"
+        },
+        {
+            "technique_id": "T1078",
+            "name": "Valid Accounts"
+        },
+        {
+            "technique_id": "T1098",
+            "name": "Account Manipulation"
+        },
+        {
+            "technique_id": "T1539",
+            "name": "Data from Web Session"
+        }
+    ],
+    "mitre_ids": [
+        "T1566",
+        "T1595",
+        "T1056",
+        "T1621",
+        "T1078",
+        "T1098",
+        "T1539"
+    ],
+    "decision": "Log for monitoring",
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: unknown\nURL: unknown\nDomain: unknown\n\nRisk Score: 220\nSeverity: CRITICAL\n\nReasons:\nObserved activity: email_link_clicked\nObserved activity: email_link_clicked\nObserved activity: email_link_clicked\nObserved activity: page_visit\nObserved activity: page_visit\nObserved activity: credential_submission\nObserved activity: credential_submission\nObserved activity: mfa_bypass_attempt\nObserved activity: session_activity\nObserved activity: password_change_attempt\nObserved activity: data_access\nObserved activity: data_access\nObserved activity: data_access\nPhishing alert category\nMulti-stage attack behavior detected\nSeverity boosted due to multiple MITRE ATT&CK techniques\n\nDecision:\nLog for monitoring\n\nMITRE ATT&CK Techniques:\nT1566 - Phishing\nT1595 - Active Scanning\nT1056 - Input Capture\nT1621 - Multi-Factor Authentication Request Generation\nT1078 - Valid Accounts\nT1098 - Account Manipulation\nT1539 - Data from Web Session\n",
+    "case_id": "CASE-20260219-125102"
+}

@@ -1,0 +1,56 @@
+{
+    "alert_type": "phishing",
+    "user": "unknown",
+    "url": "unknown",
+    "timestamp": "",
+    "iocs": {
+        "domain": "unknown"
+    },
+    "timeline": [
+        {
+            "stage": "normalized",
+            "time": "2026-02-17T12:54:01.938245"
+        },
+        {
+            "stage": "ioc_extracted",
+            "time": "2026-02-17T12:54:01.938245"
+        },
+        {
+            "stage": "risk_scored",
+            "time": "2026-02-17T12:54:01.938245"
+        },
+        {
+            "stage": "mitre_mapped",
+            "time": "2026-02-17T12:54:01.938245"
+        },
+        {
+            "stage": "severity_boosted",
+            "time": "2026-02-17T12:54:01.938245"
+        },
+        {
+            "stage": "decision_made",
+            "time": "2026-02-17T12:54:01.938245"
+        },
+        {
+            "stage": "report_generated",
+            "time": "2026-02-17T12:54:01.938245"
+        }
+    ],
+    "risk_score": 20,
+    "severity": "LOW",
+    "analysis_reasons": [
+        "Phishing alert category"
+    ],
+    "mitre_attack": [
+        {
+            "technique_id": "T1566",
+            "name": "Phishing"
+        }
+    ],
+    "decision": "Log for monitoring",
+    "mitre_ids": [
+        "T1566"
+    ],
+    "report": "\n===== AURORA-Py Incident Report =====\n\nUser: unknown\nURL: unknown\nDomain: unknown\n\nRisk Score: 20\nSeverity: LOW\n\nReasons:\nPhishing alert category\n\nDecision:\nLog for monitoring\n\nMITRE ATT&CK Techniques:\nT1566 - Phishing\n",
+    "case_id": "CASE-20260217-182402"
+}
