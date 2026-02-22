@@ -6,23 +6,22 @@
 
 ## 1️⃣ Executive Summary
 
-Modern Security Operations Centers (SOCs) process large volumes of alerts that often require manual validation and correlation before analysts can determine whether activity represents a real security incident. This project simulates how an enterprise SOC can automate phishing investigations while preserving analyst visibility and decision control.
+Modern Security Operations Centers (SOCs) process large volumes of alerts that require validation, correlation, and contextual analysis before analysts can determine whether activity represents a real security incident. This project simulates how an enterprise SOC can automate phishing investigations while preserving analyst oversight and decision control.
 
-The Automated Phishing Detection & Incident Response Platform integrates **Splunk Enterprise** with a custom Python-based SOAR workflow to detect phishing activity, reconstruct attacker behavior, calculate dynamic risk scores, and generate structured incident response recommendations.
+The platform integrates **Splunk Enterprise** with a custom Python-based SOAR workflow to detect phishing activity, reconstruct attacker behavior, calculate dynamic risk scores, and generate structured incident response recommendations.
 
-Instead of treating alerts independently, the system correlates related events, builds an investigation narrative, maps behaviors to MITRE ATT&CK techniques, and indexes investigation results back into Splunk dashboards for analyst review.
+Rather than treating alerts independently, the system correlates related events, builds a complete investigation narrative, maps behaviors to MITRE ATT&CK techniques, and indexes investigation results back into Splunk dashboards for centralized analyst review.
 
-**Outcome**
+### Outcome
 
 * Automated investigation lifecycle from detection to incident reporting
-* Centralized SOC visibility through Splunk dashboards
-* Consistent and repeatable phishing incident triage workflow
+* Reduced manual correlation effort through automated evidence analysis
+* Centralized SOC visibility using investigation-focused dashboards
+* Consistent and repeatable phishing triage workflow
 
 📸 **SOC Dashboard Overview**
 
-
 <img width="2233" height="2113" alt="Phishing Detection   Automated Incident Response Dashboard" src="https://github.com/user-attachments/assets/0640c961-e6b7-4974-b615-df5cc0f1fe49" />
-
 
 *Splunk dashboard displaying incident outcome, attack timeline reconstruction, activity visualization, severity evolution, MITRE ATT&CK mapping, and targeted user analysis.*
 
@@ -32,30 +31,33 @@ Instead of treating alerts independently, the system correlates related events, 
 
 SOC teams commonly encounter operational challenges during phishing investigations:
 
-**Alert Fatigue**
-Multiple alerts generated from related activity require repeated manual analysis.
+### Alert Fatigue
 
-**Manual Investigation Overhead**
-Analysts must correlate logs, identify affected users, and reconstruct timelines manually.
+Multiple alerts generated from related activity require repeated manual analysis and slow analyst response.
 
-**Limited Context Awareness**
-Traditional alerts identify indicators but fail to explain attacker progression.
+### Manual Investigation Overhead
 
-These challenges increase investigation time and risk of missed threats during high alert volume.
+Analysts must manually correlate logs, identify affected users, and reconstruct attack timelines.
+
+### Limited Context Awareness
+
+Traditional alerts identify indicators but do not explain attacker progression or behavioral impact.
+
+These challenges increase investigation time and raise the risk of missed threats during periods of high alert volume.
 
 ---
 
 ## 3️⃣ Solution Architecture
 
-The platform follows a structured SOC lifecycle where Splunk performs detection and visualization while Python automation performs investigation orchestration.
+The platform follows a structured **Human-in-the-Loop SOC Automation** model where automation accelerates investigations while analysts retain final validation authority.
 
-**Component Responsibilities**
+### Component Responsibilities
 
-* **Splunk Enterprise** — detection rules and dashboards
-* **Flask Webhook** — secure alert ingestion
-* **Python Automation Engine** — correlation and analysis
-* **Splunk HTTP Event Collector (HEC)** — incident indexing
-* **Dashboards** — analyst investigation visibility
+* **Splunk Enterprise** — detection rules, correlation searches, and dashboards
+* **Flask Webhook** — secure alert ingestion from SIEM
+* **Python Automation Engine** — investigation orchestration and analysis
+* **Splunk HTTP Event Collector (HEC)** — structured incident indexing
+* **Dashboards** — analyst visibility and investigation validation
 
 📸 **Architecture Diagram**
 
@@ -63,19 +65,20 @@ The platform follows a structured SOC lifecycle where Splunk performs detection 
 
 ---
 
-
 ## 4️⃣ Detection & Automation Workflow
 
-Detection begins within Splunk using a phishing detection rule designed to identify suspicious credential harvesting behavior.
+Detection begins in Splunk using a phishing detection rule designed to identify suspicious credential harvesting behavior.
 
-Workflow:
+The detection monitors authentication or web interaction events associated with suspicious domains and correlates user activity patterns indicating potential credential submission.
+
+### Workflow
 
 1. Splunk detection rule triggers
 2. Webhook sends alert payload
-3. Flask listener receives alert data
-4. Python automation initiates investigation
+3. Flask listener securely receives alert data
+4. Python automation initiates investigation workflow
 
-The alert payload contains:
+### Alert Payload Includes
 
 * alert name
 * affected users
@@ -93,9 +96,9 @@ The alert payload contains:
 
 ## 5️⃣ Investigation Process
 
-After receiving the webhook alert, the Python automation engine performs automated analysis and generates a structured incident investigation report.
+After receiving the webhook alert, the Python automation engine performs automated analysis and generates a structured investigation report.
 
-The generated output consolidates investigation evidence into an analyst-readable summary containing:
+The system correlates related activity and consolidates investigation evidence into an analyst-readable summary containing:
 
 * **Primary affected user**
 * **Affected user count**
@@ -105,7 +108,7 @@ The generated output consolidates investigation evidence into an analyst-readabl
 * **Automated decision outcome**
 * **Recommended remediation actions**
 
-This removes the need for manual log correlation and provides analysts with immediate investigation context.
+Automation significantly reduces manual log correlation effort while preserving analyst validation and oversight.
 
 📸 **Automated Incident Analysis Output**
 
@@ -117,17 +120,17 @@ This removes the need for manual log correlation and provides analysts with imme
 
 ## 6️⃣ Attack Timeline Reconstruction
 
-Correlated phishing events are visualized within Splunk as an ordered investigation timeline.
+Correlated phishing events are visualized as an ordered investigation timeline within Splunk.
 
 The timeline panel displays:
 
-* **Event timestamps**
-* **Affected user identity**
-* **Phishing domain interaction**
-* **Observed attacker actions**
-* **Requested URI paths**
+* event timestamps
+* affected user identity
+* phishing domain interaction
+* observed attacker actions
+* requested URI paths
 
-This enables analysts to understand attacker progression from initial interaction through credential compromise and subsequent activity.
+This allows analysts to understand attacker progression from initial interaction through credential compromise and follow-on activity.
 
 📸 **Attack Progression Timeline**
 
@@ -139,15 +142,15 @@ This enables analysts to understand attacker progression from initial interactio
 
 Detected behaviors are automatically mapped to MITRE ATT&CK techniques and visualized inside Splunk.
 
-The visualization displays:
+Displayed fields include:
 
-* **Technique ID**
-* **Technique name**
-* **Occurrence count during investigation**
+* Technique ID
+* Technique name
+* Occurrence count during investigation
 
-This provides standardized threat context and helps analysts quickly identify adversary tactics.
+This standardizes threat context and assists analysts in quickly identifying adversary tactics and techniques.
 
-Examples observed:
+### Observed Techniques
 
 * **T1566 — Phishing**
 * **T1056 — Input Capture**
@@ -163,15 +166,26 @@ Examples observed:
 
 Following investigation, a decision engine evaluates findings using behavioral indicators and calculated risk scoring.
 
-The automation generates a Slack notification containing:
+### Decision Model
 
-* **Alert name**
-* **Severity level**
-* **Affected user information**
-* **Investigation decision**
-* **Incident summary**
+The automated decision combines:
 
-This ensures SOC analysts receive actionable context immediately.
+* risk score thresholds
+* indicator confidence
+* behavioral correlation results
+* affected user scope
+
+Automation provides response recommendations while analysts retain final approval authority to prevent false positives.
+
+The system generates a Slack notification containing:
+
+* alert name
+* severity level
+* affected user information
+* investigation decision
+* incident summary
+
+This enables analysts to immediately triage incidents without opening Splunk.
 
 📸 **Slack SOC Notification**
 
@@ -199,11 +213,11 @@ Shows timestamp, user, domain interaction, action performed, and accessed URI fo
 
 ### Attack Activity Over Time
 
-Visualizes event frequency across timestamps to illustrate behavioral progression.
+Visualizes behavioral progression through event frequency analysis.
 
 ### Severity Evolution
 
-Shows how incident severity changes during investigation.
+Shows how incident severity changes during investigation stages.
 
 ### MITRE ATT&CK Coverage
 
@@ -211,7 +225,7 @@ Displays mapped techniques with occurrence counts derived from analysis.
 
 ### Targeted Users
 
-Lists impacted accounts identified during investigation.
+Lists both the primary compromised account and additional targeted users identified during correlation analysis.
 
 ---
 
@@ -221,14 +235,14 @@ The investigation concludes with an automatically generated incident record inde
 
 The final summary includes:
 
-* **Case ID**
-* **Primary compromised user**
-* **Affected user count**
-* **Detected phishing domain**
-* **Calculated risk score**
-* **Severity classification (Critical)**
-* **Automated decision**
-* **Recommended containment actions**
+* Case ID
+* Primary compromised user
+* Affected user count
+* Detected phishing domain
+* Calculated risk score
+* Severity classification (Critical)
+* Automated decision outcome
+* Recommended containment actions
 
 📸 **Incident Summary**
 
@@ -264,15 +278,17 @@ The final summary includes:
 ### Incident Response
 
 * Risk scoring and severity classification
-* Automated response workflows
+* Automated response recommendations
 
 ---
 
 ## 1️⃣2️⃣ Conclusion
 
-This project demonstrates how detection engineering and automation can improve SOC investigation efficiency. By integrating Splunk detection with a custom Python SOAR workflow, isolated alerts are transformed into structured investigations supported by behavioral analysis, risk scoring, and standardized threat mapping.
+This project demonstrates how detection engineering and automation can improve SOC investigation efficiency within a modern Security Operations Center.
 
-Automation accelerates investigation while dashboards maintain analyst visibility and control, reflecting real-world SOC operational practices.
+By integrating Splunk detection with a custom Python SOAR workflow, isolated alerts are transformed into structured investigations supported by behavioral analysis, risk scoring, MITRE ATT&CK mapping, and analyst-centric dashboards.
 
----
+The automation reduces Mean-Time-to-Response (MTTR), improves investigation consistency, and enables SOC teams to scale analysis during high alert volumes while maintaining human analyst oversight.
+
+It’s a small section almost nobody adds — but senior analysts always do.
 
